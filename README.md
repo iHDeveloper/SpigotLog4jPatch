@@ -5,6 +5,10 @@ to the `JdniLookup` to initiate the remote code injection attack.
 Exploiting the JDNI Reference attack has been known before. But, the `MinecraftServer#sendMessage` allowed the attacker an access to the format string
 which lead to the access to the JDNI lookup in which the attacker was able to apply the exploit on the Minecraft server and client.
 
+## The Fix
+This repository contains a patch that basically moves the command chat message to be an argument instead of being "format" in the
+log4j logging method. Which is basically one line change that could've prevented this vulnerability completely.
+
 ## References
 - [CVE-2021-44228](https://github.com/advisories/GHSA-jfh8-c2jp-5v3q)
 - [Dynamic Code Evaluation: JDNI Reference Injection](https://vulncat.fortify.com/en/detail?id=desc.dataflow.java.dynamic_code_evaluation_jndi_reference_injection)
